@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaRPattern", "MediaRPattern\MediaRPattern.csproj", "{44591E4B-931D-4BD7-B178-671B984F3AA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaR.Domain", "MediaR.Domain\MediaR.Domain.csproj", "{5E462913-616F-4103-95B7-F74E66ACDD77}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{44591E4B-931D-4BD7-B178-671B984F3AA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44591E4B-931D-4BD7-B178-671B984F3AA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44591E4B-931D-4BD7-B178-671B984F3AA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44591E4B-931D-4BD7-B178-671B984F3AA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E462913-616F-4103-95B7-F74E66ACDD77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E462913-616F-4103-95B7-F74E66ACDD77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E462913-616F-4103-95B7-F74E66ACDD77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E462913-616F-4103-95B7-F74E66ACDD77}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A3DB71F8-1FDE-4765-8030-5A154129F274}
+	EndGlobalSection
+EndGlobal
