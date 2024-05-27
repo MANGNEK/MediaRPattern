@@ -1,13 +1,14 @@
 ﻿using MediaR.Domain.Core.Device.CreateDevice;
+using MediaR.Domain.Core.Device.Updatedevice;
 using MediaR.Domain.DTO;
-using MediaR.Domain.IRepository;
-using MediaR.Domain.Models;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MediaRPattern.Controllers;
 
-public class DeviceController : Controller
+[ApiController]
+[Route("api/[Controller]")]
+public class DeviceController : ControllerBase
 {
     private readonly IMediator _mediator;
 
@@ -17,6 +18,14 @@ public class DeviceController : Controller
     [Route("create")]
     public async void CreateDevice([FromBody] DeviceDTO device)
     {
-        await _mediator.Send(new CreateDeviceRequest(device));
+        var result = await _mediator.Send(new CreateDeviceCommand(device));
+    }
+
+    [HttpPatch]
+    [Route("update")]
+    public async Task<string> UpdateDevice(string id, [FromBody] DeviceDTO device)
+    {
+        var result = await _mediator.Send(new UpdateDeviceCommand(id, device));
+        return result;
     }
 }

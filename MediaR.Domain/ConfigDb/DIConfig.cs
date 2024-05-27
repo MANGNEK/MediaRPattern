@@ -21,5 +21,6 @@ public static class DIConfig
         service.AddScoped<IDevice, DeviceRepository>();
         service.AddScoped<IUnitOfWork, UnitOfWork>();
         service.AddScoped<IMongoContext, MongoDbContext>();
+        service.AddMediatR(config => config.RegisterServicesFromAssemblies(typeof(DIConfig).Assembly));
     }
 }

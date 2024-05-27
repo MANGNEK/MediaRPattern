@@ -1,5 +1,6 @@
 using MediaR.Domain.ConfigDb;
-using MediaRPattern.DIMediatR;
+using MediaR.Domain.Core.Device.CreateDevice;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
@@ -10,7 +11,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDomain(configuration);
-builder.Services.RegisterRequestHandlers();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
