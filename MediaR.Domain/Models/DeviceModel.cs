@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MediaR.Domain.Models;
 
-public class Device
+public class DeviceModel
 {
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]

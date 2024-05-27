@@ -1,6 +1,7 @@
 ﻿using MediaR.Domain.IRepository;
 using MediaR.Domain.Repository;
 using MediaR.Domain.Ufw;
+using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
