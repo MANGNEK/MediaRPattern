@@ -20,7 +20,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
         return await result.ToListAsync();
     }
 
-    public async Task<T> GetById(int id)
+    public async Task<T> GetById(string id)
     {
         var filter = Builders<T>.Filter.Eq("Id", id);
         var result = await _context.FindAsync(filter);
@@ -43,7 +43,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
         this._unitOfWork.AddOperation(action);
     }
 
-    public void Delete(int id)
+    public void Delete(string id)
     {
         Action action = () =>
         {
