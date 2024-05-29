@@ -1,5 +1,6 @@
 ﻿using MediaR.Domain.DTO;
 using MediaR.Domain.Models;
+using MediaR.Domain.Response;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,6 @@ using System.Threading.Tasks;
 
 namespace MediaR.Domain.Core.Device.GetAllDevice;
 
-public class GetAllDeviceConmand() : IRequest<List<DeviceReponse>>
+public class GetAllDeviceConmand() : IRequest<Result>
 {
 }

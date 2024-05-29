@@ -5,6 +5,7 @@ using MediaR.Domain.Core.Device.GetByIdDevice;
 using MediaR.Domain.Core.Device.Updatedevice;
 using MediaR.Domain.DTO;
 using MediaR.Domain.Models;
+using MediaR.Domain.Response;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,36 +21,35 @@ public class DeviceController : ControllerBase
 
     [HttpPost]
     [Route("create")]
-    public async void CreateDevice([FromBody] DeviceDTO device)
+    public async Task<Result> CreateDevice([FromBody] DeviceDTO device)
     {
-        var result = await _mediator.Send(new CreateDeviceCommand(device));
+        return await _mediator.Send(new CreateDeviceCommand(device));
     }
 
     [HttpPatch]
     [Route("update")]
-    public async Task<string> UpdateDevice(string id, [FromBody] DeviceDTO device)
+    public async Task<Result> UpdateDevice(string id, [FromBody] DeviceDTO device)
     {
-        var result = await _mediator.Send(new UpdateDeviceCommand(id, device));
-        return result;
+        return await _mediator.Send(new UpdateDeviceCommand(id, device));
     }
 
     [HttpGet]
     [Route("getAll")]
-    public async Task<List<DeviceReponse>> GetAll()
+    public async Task<Result> GetAll()
     {
         return await _mediator.Send(new GetAllDeviceConmand());
     }
 
     [HttpGet]
     [Route("getById")]
-    public async Task<DeviceReponse> GetById(string id)
+    public async Task<Result> GetById(string id)
     {
         return await _mediator.Send(new GetByIdDeviceCommand(id));
     }
 
     [HttpDelete]
     [Route("delete")]
-    public Task<string> DeleteById(string id)
+    public Task<Result> DeleteById(string id)
     {
         return _mediator.Send(new DeleteDeviceCommand(id));
     }
