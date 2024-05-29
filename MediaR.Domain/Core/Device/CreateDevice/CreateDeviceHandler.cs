@@ -12,6 +12,6 @@ public class CreateDeviceHandler(IDevice _deviceRepository) : IRequestHandler<Cr
     {
         _deviceRepository.Insert(request.DeviceRequest.Adapt<DeviceModel>());
         _deviceRepository.Save();
-        return Result.Ok("Save Success");
+        return Result.Ok();
     }
 }

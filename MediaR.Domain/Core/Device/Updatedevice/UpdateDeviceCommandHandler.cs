@@ -14,6 +14,6 @@ public class UpdateDeviceCommandHandler(IDevice _deviceRepository) : IRequestHan
             device.Id = request.Id;
             _deviceRepository.Update(request.Id, device);
             _deviceRepository.Save();
-            return Result.Ok("Update Success !!!");
+            return Result.Ok();
     }
 }

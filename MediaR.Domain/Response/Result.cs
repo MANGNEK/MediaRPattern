@@ -4,7 +4,6 @@ public class Result
 {
     public bool Success { get; }
     public string Error { get; private set; }
-    public bool IsFailure => !Success;
 
     protected Result(bool success, string error)
     {
@@ -20,7 +19,7 @@ public class Result
 
     public static Result<T> Fail<T>(string message)
     {
-        return new Result<T>(default(T), false, message);
+        return new Result<T>(false, message, default(T));
     }
 
     public static Result Ok()
@@ -28,14 +27,14 @@ public class Result
         return new Result(true, string.Empty);
     }
 
-    public static Result Ok(string message)
-    {
-        return new Result(true, message);
-    }
+    //public static Result Ok(string message)
+    //{
+    //    return new Result(true, message);
+    //}
 
     public static Result<T> Ok<T>(T value)
     {
-        return new Result<T>(value, true, string.Empty);
+        return new Result<T>(true, string.Empty, value);
     }
 }
 
@@ -43,7 +42,7 @@ public class Result<T> : Result
 {
     public T Value { get; set; }
 
-    protected internal Result(T value, bool success, string error) : base(success, error)
+    protected internal Result(bool success, string error, T value) : base(success, error)
     {
         Value = value;
     }

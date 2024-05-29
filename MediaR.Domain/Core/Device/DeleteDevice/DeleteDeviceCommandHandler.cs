@@ -11,6 +11,6 @@ public class DeleteDeviceCommandHandler(IDevice _deviceRepository) : IRequestHan
     {
         _deviceRepository.Delete(request.IdDevice);
         _deviceRepository.Save();
-        return Result.Ok("Delete Success !!");
+        return Result.Ok();
     }
 }
